@@ -1,6 +1,8 @@
 # unit13-challenge
 #### Clustering Cryptocurrencies Using K-Means
 
+## by Nedal mahanweh 
+
 In this project, we will put the unsupervivsed learning and Amazon SageMaker skills into action by clustering cryptocurrencies and creating plots to present results.
 
 ### Main tasks 
