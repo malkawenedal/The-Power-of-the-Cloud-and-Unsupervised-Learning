@@ -15,26 +15,28 @@ In this project, we will put the unsupervivsed learning and Amazon SageMaker ski
 
 * ` Visualizing Results `  : Create some plots and data tables to present the  results.
 
+* `Using Amazon SageMaker `: upload the  Jupyter notebook to Amazon SageMaker and deploy it.
 ---
 
 ### Files
 * [crypto_clustering.ipynb](crypto_clustering.ipynb)
 * [crypto_clustering_sm.ipynb](crypto_clustering_sm.ipynb)
 * [images](images)
+* [Resources](Resources)
 ---
 #### Data Preprocessing
-in this section, we  will load the information about cryptocurrencies and perform data preprocessing tasks Using the following `requests` library, retreive the necessary data from the following API endpoint from _CryptoCompare_ - `https://min-api.cryptocompare.com/data/all/coinlist`. 
+In this section, we  will load the information about cryptocurrencies and perform data preprocessing tasks Using the following `requests` library, retreive the necessary data from the following API endpoint from _CryptoCompare_ - `https://min-api.cryptocompare.com/data/all/coinlist`. 
 
-after doing the cleaning process , we stored the  names of all cryptocurrencies in a DataFrame named ` coins_name `, use the ` crypto_df.index `  as the index for this new DataFrame.
+after doing the cleaning process , we stored the  names of all cryptocurrencies in a DataFrame named ` coins_name `, using the ` crypto_df.index `  as the index for this new DataFrame.
 
 ![coins_name](images/coins_name.png)
 
 
-as our features data have non numertic values , we have to Create dummy variables for all the text features, and store the resulting data in a DataFrame named X.
+as our features data have non numeric values , we have to Create dummy variables for all the text features, and store the resulting data in a DataFrame named X.
 
 ![dummies](images/dummies_df.png)
 
-Use the [`StandardScaler` from `sklearn`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) to standardize all the data of the `X` DataFrame. Remember, this is important prior to using PCA and K-Means algorithms.
+Use the [`StandardScaler` from `sklearn`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) to standardize all the data of the `X` DataFrame.  This is important prior to using PCA and K-Means algorithms.
 
 
 ![standardscaler](Images/scaler_df.png)
@@ -70,13 +72,46 @@ In this section, we will create some data visualization to present the final res
 
 
 *  Create a 3D-Scatter using Plotly Express to plot the clusters using the `clustered_df` DataFrame.
-![3D scatter]()
+![3D scatter](images/3d_plot.png)
 
 *  Use `hvplot.table` to create a data table with all the current tradable cryptocurrencies.
 
-![hv plot_table]()
+![hv plot_table](images/table_df.png)
 
 
 * Create a scatter plot using `hvplot.scatter`, to present the clustered data about cryptocurrencies
 
-![scatter plot]()
+![scatter plot](images/second_chart.png)
+
+---
+## uploading the  Jupyter notebook to Amazon SageMaker and deploy it.
+
+Use the altair scatter plot to create the Elbow Curve.
+
+![elbow curve](images/elbow_curve.png)
+
+
+Use the altair scatter plot, instead of the 3D-Scatter from Plotly Express, to visualize the clusters.
+
+![2D plot ](images/altr1_plot.png)
+
+
+show the table of current tradable cryptocurrencies using the ` display() ` command.
+
+
+![table ](images/altr_table.png)
+
+
+
+Use the` altair scatter plot `  to visualize the tradable cryptocurrencies
+
+![plot](images/altr2_plot.png)
+
+
+
+
+
+
+
+
+
